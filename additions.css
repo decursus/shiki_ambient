@@ -1,0 +1,485 @@
+/*
+ __     __  ___          __   __    ___    __        __  
+|  \   /__`  |      /\  |  \ |  \ |  |  | /  \ |\ | /__` 
+|__/ . .__/  |     /~~\ |__/ |__/ |  |  | \__/ | \| .__/ 
+     '                                                   
+*/
+
+/* НАЧАЛО Обозначение типа в Истории */
+.history-page a:before {
+    display: inline-block;
+    vertical-align: top;
+    width: 72px;
+}
+
+.history-page a[href^="/a"]:before {
+    content: '[Аниме] ';
+    color: #34a853;
+}
+
+.history-page a[href^="/m"]:before {
+    content: '[Манга] ';
+    color: #9c27b0;
+}
+
+.history-page a[href^="/r"]:before {
+    content: '[Ранобэ] ';
+    color: #039be5;
+}
+
+[data-locale="en"] .history-page a[href^="/a"]:before {
+    content: '[Anime] ';
+}
+
+[data-locale="en"] .history-page a[href^="/m"]:before {
+    content: '[Manga] ';
+}
+
+[data-locale="en"] .history-page a[href^="/r"]:before {
+    content: '[Ranobe] ';
+}
+/* КОНЕЦ Обозначение типа в Истории */
+
+/* НАЧАЛО Фикс размеров у постеров */
+.b-catalog_entry .cover .image-cutter {
+    max-width: none !important;
+    max-height: none !important
+}
+
+.b-catalog_entry .cover .image-cutter::before {
+    content: '';
+    display: block;
+    padding-bottom: 155.5555%
+}
+
+.b-catalog_entry .cover .image-cutter img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top
+}
+/* КОНЕЦ Фикс размеров у постеров */
+
+/* НАЧАЛО Вкладки в блоке "Обо мне" */
+[data-icon]::before {
+    display: block;
+    flex-shrink: 0;
+    width: 1em !important;
+    font-family: 'Material Icons' !important;
+    font-size: 24px !important;
+    font-style: normal;
+    font-weight: 400 !important;
+    line-height: 1 !important;
+    letter-spacing: normal;
+    text-transform: none;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: 'liga';
+    overflow: hidden;
+}
+
+[data-icon]::before {
+    content: attr(data-icon);
+    display: inline-block;
+    vertical-align: top;
+    flex-shrink: 0;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    margin-right: 0;
+    margin-left: 0;
+}
+
+.b-tabs {
+    margin-bottom: 1rem;
+}
+
+.b-tabs_list {
+    display: flex;
+    overflow-y: auto;
+    padding: 0.5rem 0;
+}
+
+@media (min-width: 960px) {
+    .b-tabs_list {
+        justify-content: center;
+    }
+}
+
+.b-tabs_switch {
+    min-width: 95px;
+    color: gray;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+    cursor: pointer;
+}
+
+.b-tabs_switch.active {
+    cursor: default;
+}
+
+.b-tabs_switch:nth-child(1):active,
+.b-tabs_switch.active:nth-child(1) {
+    color: rgb(var(--main-blue));
+}
+
+.b-tabs_switch:nth-child(2):active,
+.b-tabs_switch.active:nth-child(2) {
+    color: rgb(var(--main-blue));
+}
+
+.b-tabs_switch:nth-child(3):active,
+.b-tabs_switch.active:nth-child(3) {
+    color: rgb(var(--main-blue));
+}
+
+.b-tabs_switch:nth-child(4):active,
+.b-tabs_switch.active:nth-child(4) {
+    color: rgb(var(--main-blue));
+}
+
+.b-tabs_switch:nth-child(5):active,
+.b-tabs_switch.active:nth-child(5) {
+    color: rgb(var(--main-blue));
+}
+
+.b-tabs_switch:nth-child(6):active,
+.b-tabs_switch.active:nth-child(6) {
+    color: rgb(var(--main-blue));
+}
+
+.b-tabs_switch_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.b-tabs_switch_icon {
+    margin: 0 auto;
+    padding: 8px;
+}
+
+.b-tabs_switch:not(.active):hover .b-tabs_switch_icon {
+    transform: translateY(-4px);
+}
+
+.b-tabs_switch_title {
+    margin: 0 auto;
+    padding-top: 4px;
+    padding-bottom: 8px;
+    white-space: nowrap;
+    line-height: 1rem;
+    font-size: 0.875rem;
+    font-weight: bold;
+}
+
+.b-tabs_switch_icon,
+.b-tabs_switch_title {
+    transition: 200ms ease-in-out;
+}
+
+.b-tabs_panel {
+    padding-top: 1rem;
+}
+
+@media (max-width: 1024px) {
+    .b-tabs_switch {
+        min-width: 60px; /* уменьшаем ширину вкладок */
+        font-size: 0.8rem; /* уменьшаем размер текста вкладки */
+        padding: 4px; /* уменьшаем внутренние отступы */
+        flex-shrink: 0; /* предотвращаем растягивание вкладок */
+        text-align: center; /* центрируем текст */		
+    }
+
+    .b-tabs_switch_icon {
+        font-size: 18px; /* уменьшаем размер иконок */
+        padding: 4px; /* уменьшаем отступы у иконок */
+    }
+
+    .b-tabs_switch_title {
+        font-size: 0.75rem; /* уменьшаем размер текста */
+        padding-top: 2px; /* уменьшаем отступы у заголовков */
+        padding-bottom: 4px;
+    }
+
+    .b-tabs_list {
+        display: flex;
+        justify-content: center; /* центрируем вкладки */		
+        overflow-x: auto; /* включаем горизонтальную прокрутку, если вкладки не помещаются */
+        padding: 0.25rem 0; /* уменьшаем отступы списка вкладок */
+    }
+}
+/* КОНЕЦ Вкладки в блоке "Обо мне" */
+
+/* НАЧАЛО Оформление статуса */
+.p-profiles .profile-head .c-brief header:after {
+    content: "Bad Omens - V.A.N";
+    color: var(--color-text-disabled) !important;
+    font-size: 13px !important;
+	-moz-hyphens: auto;
+	-webkit-hyphens: auto;
+	-ms-hyphens: auto;	
+}
+/* КОНЕЦ Оформление статуса */
+
+/* НАЧАЛО Фильтр на изображениях */
+img {
+	filter: brightness(95%) grayscale(75%);
+}
+
+img.mfp-img {
+    border-radius: var(--rounded-main);
+    padding: 0;
+    filter: none !important;
+    max-height: 900px !important;
+}
+
+@media only screen and (min-width: 1024px) {
+	.mfp-close-btn-in .mfp-close, .mfp-bottom-bar {
+		display: none !important;
+	}
+}
+/* КОНЕЦ Фильтр на изображениях */
+
+/* НАЧАЛО Боковые кнопки */
+@media screen and (min-width: 1200px) {
+    .button-left-1:hover,
+    .button-left-2:hover,
+    .button-left-3:hover,
+    .button-left-4:hover,
+    .button-left-5:hover,
+    .button-left-6:hover {
+        text-decoration: none;
+        left: -2px;
+        z-index: 60;
+        opacity: 1;
+        background: var(--color-primary-reduced); /* Цвет при наведение на кнопку */
+        animation: slide-glow 3s infinite ease-in-out; /* Замедленная анимация свечения */
+        background-size: 200% 100%; /* Увеличенный размер фона для плавного перемещения */
+        background-image: linear-gradient( to right,
+        rgba(124, 199, 231, 0.2) 0%,
+        rgba(124, 199, 231, 0.8) 50%,
+        rgba(124, 199, 231, 0.2) 100%); /* Градиент с цветом #7cc7e7 */
+    }
+
+    /* Анимация свечения слева направо */
+    @keyframes slide-glow {
+        0% {
+            background-position: 200% 0;
+        }
+
+        100% {
+            background-position: -200% 0;
+        }
+    }
+
+    .button-left-1,
+    .button-left-2,
+    .button-left-3,
+    .button-left-4,
+    .button-left-5,
+    .button-left-6 {
+        transition: 0.6s cubic-bezier(1, 0, 0, 1);
+        color: white;
+        font-weight: bold;
+        background: var(--color-background);
+        border-radius: 0px 5rem 5rem 0;
+        border: 1px solid var(--color-border);
+        position: fixed;
+        height: 50px;
+        overflow: hidden;
+        z-index: 20;
+        margin-top: 55px;
+        opacity: 1;
+        text-transform: uppercase;
+        text-decoration: none !important;
+    }
+
+    .button-left-1 > strong,
+    .button-left-2 > strong,
+    .button-left-3 > strong,
+    .button-left-4 > strong,
+    .button-left-5 > strong,
+    .button-left-6 > strong {
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        top: 0;
+        right: 5px;
+        bottom: 0;
+        margin: auto 0;
+        border-radius: 100px;
+        box-shadow: 0px 0px 3px 3px #00000026;
+        pointer-events: none;
+        text-decoration: none !important;
+        background-color: #cfd0d21a;
+        background-repeat: no-repeat;
+        background-position: center;
+        border: 2px solid #1f1e1ee6;
+    }
+
+    .button-left-1 {
+        top: 5.465rem;
+        left: -120px;
+        width: 180px;
+    }
+
+    .button-left-2 {
+        top: 9.2rem;
+        left: -100px;
+        width: 160px;
+    }
+
+    .button-left-3 {
+        top: 12.92rem;
+        left: -140px;
+        width: 200px;
+    }
+
+    .button-left-4 {
+        top: 16.71rem;
+        left: -140px;
+        width: 200px;
+    }
+
+    .button-left-5 {
+        top: 20.5rem;
+        left: -140px;
+        width: 200px;
+    }
+
+    .button-left-6 {
+        top: 24.3rem;
+        left: -140px;
+        width: 200px;
+    }
+
+    .button-left-1 > strong {
+        background-image: url("https://desu.shikimori.one/system/user_images/original/208335/1607108.jpg");
+        background-size: cover;
+    }
+
+    .button-left-2 > strong {
+        background-image: url("https://desu.shikimori.one/system/user_images/original/208335/1607108.jpg");
+        background-size: cover;
+    }
+
+    .button-left-3 > strong {
+        background-image: url("https://i.ibb.co/7rKGmgX/bt232.png");
+        background-size: cover;
+    }
+
+    .button-left-4 > strong {
+        background-image: url("https://dere.shikimori.one/system/user_images/original/208335/1607109.jpg");
+        background-size: cover;
+    }
+
+    .button-left-5 > strong {
+        background-image: url("https://");
+        background-size: cover;
+    }
+
+    .button-left-6 > strong {
+        background-image: url("https://");
+        background-size: cover;
+    }
+
+    .button-left-1 .b-link,
+    .button-left-2 .b-link,
+    .button-left-3 .b-link,
+    .button-left-4 .b-link,
+    .button-left-5 .b-link,
+    .button-left-6 .b-link {
+        display: flex;
+        align-items: center;
+        height: 100% !important;
+        font-size: 16px !important;
+        color: rgba(var(--color-text-secondary)) !important;
+        justify-content: center;
+        text-decoration: none !important;
+    }
+
+    .button-left-1 .b-link {
+        padding-right: 3rem;
+    }
+
+    .button-left-2 .b-link {
+        padding-right: 3rem;
+    }
+
+    .button-left-3 .b-link {
+        padding-right: 3rem;
+    }
+
+    .button-left-4 .b-link {
+        padding-right: 3rem;
+    }
+
+    .button-left-5 .b-link {
+        padding-right: 3rem;
+    }
+
+    .button-left-6 .b-link {
+        padding-right: 3rem;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    /* Отключение кнопок на мобильных устройствах*/
+    .button-left-1,
+    .button-left-2,
+    .button-left-3,
+    .button-left-4,
+    .button-left-5,
+    .button-left-6 {
+        display: none;
+    }
+}
+/* КОНЕЦ Боковые кнопки */
+
+/* НАЧАЛО Плашка предупреждения в "Обо мне" */
+.warning-alert {
+	position: relative;
+	font-size: 16px;
+	color: rgb(210, 40, 40);
+	background: rgba(210, 40, 40, .2);
+	border: 1px solid rgba(210, 40, 40, .3);
+	padding: 10px 12px 12px 54px;
+	margin: 0 0 12px;
+	border-radius: 3px;
+}
+
+.warning-alert:before {
+	font-family: 'Material Icons';
+	text-transform: none;
+	content: 'info_outline';
+	height: 100%;
+	width: 56px;
+	font-size: 30px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+@media (max-width: 768px) {
+	.warning-alert {
+		font-size: 14px; /* Уменьшенный размер для планшетов */
+	}
+}
+
+@media (max-width: 480px) {
+	.warning-alert {
+		font-size: 12px; /* Ещё меньший размер для мобильных */
+	}
+}
+/* КОНЕЦ Плашка предупреждения в "Обо мне" */
